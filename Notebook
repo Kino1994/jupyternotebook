@@ -1,0 +1,198 @@
+import numpy as np
+
+a = np.array([3, 4, 2])
+b = np.array([[3, 4, 2], [3, 3, 2]])
+
+print(a)
+
+print(b)
+
+l = [3, 4, 2]
+
+             
+a = np.asarray(l)
+             
+print(a)
+
+b = np.asarray(a)
+print(b)
+
+a = np.array([[3., 2., 4.], [3., 3., 2.]])
+a.tolist()
+
+
+b = np.array([2., 0., -1.])
+b.tolist()
+
+
+a = np.arange(5)
+print(a)
+
+c = np.arange(1, 2, 0.2)
+print(c)
+
+
+b = np.linspace(1, 2, 6)
+print(b)
+
+
+a = np.ones(3)
+print(a)
+
+
+b = np.zeros((3, 2))
+print(b)
+
+
+
+a = np.array([[1, 2, 3, 4], [4, 5, 6, 7]])
+b = np.zeros_like(a) # 2 filas, 4 columnas
+print(b)
+
+
+b = np.eye(4, 3)
+print(b)
+
+
+b = np.eye(5, 4, k=-1)
+print(b)
+
+
+
+
+x = np.array([1, 2, 3])
+y = x # y es una ’vista’ de x
+x[0] = 10 # luego veremos esta orden
+print(y)
+
+x = np.array([1, 2, 3])
+y = np.copy(x)
+x[0] = 10
+print(y)
+
+
+a = np.array([[1, 2], [3, 4]])
+b = np.array([[5, 6]])
+np.concatenate((a, b))
+
+
+
+
+x = np.array([0, 1, 2])
+y = np.array([-1, 0.2, 0.9])
+np.concatenate((x, y))
+
+
+np.concatenate(([x], [y]))
+np.array([[ 0.0, 1.0, 2.0],[-1.0, 0.2, 0.9]])
+
+
+
+
+a = np.array([[1, 2], [3, 4]])
+
+np.repeat(a, 2, axis=0)
+
+np.array([[1, 2],[1, 2],[3, 4],[3, 4]])
+
+np.repeat(a, 2, axis=1)
+np.array([[1, 1, 2, 2],[3, 3, 4, 4]])
+
+
+
+a = np.array([[0, 1, 2, 3], [5, 6, 7, 8]])
+
+np.roll(a, 1, axis=0)
+np.array([[5, 6, 7, 8],[0, 1, 2, 3]])
+
+np.roll(a, -1, axis=1)
+np.array([[1, 2, 3, 0],[6, 7, 8, 5]])
+
+
+b = np.logspace(1, 2, 6)
+print(b)
+np.array([10., 15.84893192, 25.11886432,39.81071706, 63.09573445, 100.])
+
+
+np.roll(a, -1, axis=1)
+np.array([[1, 2, 3, 0],[6, 7, 8, 5]])
+
+
+b = np.logspace(1, 2, 6)
+print(b)
+np.array([10., 15.84893192, 25.11886432,39.81071706, 63.09573445, 100.])
+
+
+
+
+p = np.ogrid[0:2:0.5, 0:2]
+print(p)
+
+
+m = np.mgrid[0:2:0.5, 0:2]
+print(m)
+
+
+a = np.array([[3, 2, 4], [3, 3, 2]])
+np.ndim(a)
+
+a.ndim
+
+a = np.array([[3, 2, 4], [3, 3, 2]])
+np.size(a)
+
+a.size
+
+a = np.array([[3, 2, 4], [3, 3, 2]])
+
+np.shape(a)
+a.shape
+
+
+a = np.array([[3, 2, 4], [3, 3, 2]])
+a.shape[0]
+len(a)
+
+
+a = np.array([[3, 2, 4], [3, 3, 2]])
+a.shape
+a.shape = (a.size,)
+print(a)
+
+a[0] = 100
+a.shape = (2, 3)
+print(a)
+
+b = np.array([[3, 4, 2], [3, 3, 2]])
+print(b.T)
+
+
+b = np.array([[[3, 2, 4], [3, 3, 2]],[[-1, -2, -3], [0, 1, 2]]])
+
+print(np.transpose(b, axes=(1, 0, 2)))
+
+b = np.array([[3, 2, 4], [3, 3, 2]])
+print(b)
+
+np.array([[ 3, 2, 4],[ 3, 3, 2]])
+c = np.ravel(b)
+
+print(c)
+
+np.array([3, 2, 4, 3, 3, 2])
+d = np.ndarray.flatten(b)
+
+
+
+b = np.array([[3, 2, 4], [3, 3, 2]])
+b[1][1] = 10
+b[0, 0] = 11
+# una manera
+# otra manera, más eficiente
+print(b)
+
+
+a[:, ::2] = 77
+print(a)
+
+
