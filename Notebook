@@ -195,4 +195,175 @@ print(b)
 a[:, ::2] = 77
 print(a)
 
+b = np.copy(a[:, ::2])
+print(b)
 
+a = np.array([[3, 2, 4], [3, 3, 2]])
+b = np.array([[-3, 2, -4], [0, 1, 2]])
+c = b + a
+
+print(c)
+np.array([[0, 4, 0],[3, 4, 4]])
+
+# print(a + array([1, 2, 3, 4])) # ERROR
+
+
+a = np.array([[3, 2, 4], [3, 3, 2]])
+b = np.array([[-3, 2, -4], [0, 1, 2]])
+a += b
+print(a)
+
+a = np.array([[3, 2, 4], [3, 3, 2]])
+b = np.array([[-3, 2, -4], [0, 1, 2]])
+c = a - b
+print(c)
+
+
+a = np.array([[3, 2, 4], [3, 3, 2]])
+b = np.array([[-3, 2, -4], [0, 1, 2]])
+c = a * b
+print(c)
+
+
+a = np.array([[3., 2., 4.], [3., 3., 2.]])
+b = np.array([[-3, 2, -4], [1, 1, 2]])
+c = a / b
+print(c)
+
+
+a = np.array([[3., 2., 4.], [3., 3., 2.]])
+b = np.array([[-3, 2, -4], [0, 1, 2]])
+c = a ** b 
+c = pow(a, b)
+print(c)
+
+
+a = np.array([[3., 2., 4.], [3., 3., 2.]])
+print(a + 2)
+print(2**a)
+
+
+a = np.array([[3., 2., 4.], [3., 3., 2.]])
+b = np.array([10, 11, 12])
+print(a + b)
+
+g = np.array([[100], [200]])
+g.shape=(2, 1)
+print(a+g)
+
+
+a = np.array([[3., 2., 4.], [3., 3., 2.]])
+b = a > 2
+print(b)
+
+a = np.array([[3., 2., 4.], [3., 3., 2.]])
+c = 9 * (a > 2)
+print(c)
+
+
+a = np.array([[3., 2., 4.], [3., 3., 2.]])
+d = np.where(a > 2)
+print(b)
+
+a = np.array([[3., 2., 4.], [3., 3., 2.]])
+g = np.where(a > 2, a**2, -1.0)
+print(g)
+
+a = np.array([[3., 2., 4.], [3., 3., 2.]])
+c = a + 3 * np.sin(a) * np.log(a)
+print(c)
+
+def f(a):
+	return a + 3*np.sin(a)*np.log(a)
+
+a = np.array([[3., 2., 4.], [3., 3., 2.]])
+
+f(a)
+
+@np.vectorize
+def h(a):
+	return a if a > 2 else -a
+
+a = np.array([[3., 2., 4.], [3., 3., 2.]])
+h(a)
+
+
+hh = np.vectorize(h)
+hh(a)
+
+# hh es h ’decorada’
+# decoración directa:
+
+
+@np.vectorize
+def g(a):
+    return a if a > 2 else -a
+
+
+g(a)
+
+def f(a):
+    return a + 3 * np.sin(a) * np.log(a)
+
+
+a = np.array([[3., 2., 4.], [3., 3., 0.]])
+a.all()
+
+b = a.all(axis=1)
+print(b)
+
+
+a = np.array([[3., 2., 4.], [3., 3., 0.]])
+a.any()
+
+b = a.any(axis=1)
+print(b)
+
+
+a = np.array([[3., 2., 4.], [3., 3., 2.]])
+a.min()
+
+a.max()
+
+
+a = np.array([[3., 2., 4.], [3., 3., 2.]])
+a.min(axis=0)
+
+np.array([3., 2., 2.])
+a.max(axis=1)
+
+
+a = np.array([[3., 2., 4.], [3., 3., 2.]])
+a.sum(axis=0)
+
+np.array([6., 5., 6.])
+a.prod(axis=1)
+
+np.array([24., 18.])
+a.mean(axis=1)
+
+np.array([3., 2.6666667])
+a.std()
+
+a = np.array([3., 2., 4., 0.])
+b = np.array([2., 0., -1., 2.])
+np.dot(a, b)
+
+a = np.array([[3., 2., 4.], [3., 3., 2.]])
+b = np.array([2., 0., -1.])
+np.dot(a, b)
+
+x = np.array([1., 2., 3.])
+y = np.array([-1., 2., 4.])
+np.cross(a, b)
+
+
+a = np.array([1., 2., 3.])
+b = np.array([-1., 2.])
+np.outer(a, b)
+
+
+a = np.array([[1., 2., 3., 4.], [5., 6., 7., 8.]])
+np.diag(a)
+
+np.diag(a, k=1)
